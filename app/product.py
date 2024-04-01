@@ -94,11 +94,11 @@ class ProductParser:
     def get_all_products(self) -> list[Product]:
         """ Return page products """
         self.more_products()
-        products_soup = self.driver.find_elements(
+        products = self.driver.find_elements(
             By.CSS_SELECTOR, PRODUCTS_CARD
         )
 
         return [
             self.create_product(product)
-            for product in tqdm(products_soup)
+            for product in tqdm(products)
         ]
