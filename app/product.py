@@ -50,17 +50,6 @@ class ProductParser:
 
         return driver
 
-    # def scroll_page_from_button(self, y: int):
-    #     """ Scroll page height begging from button """
-    #     # calculate the desired scroll position
-    #     scroll_position = self.driver.execute_script(
-    #     "return document.body.scrollHeight") - y
-    #     self.driver.execute_script(
-    #         f"window.scrollTo({{" \
-    #         f" top: {scroll_position}, " \
-    #         f"behavior: 'smooth', block: 'start' }})"
-    #     )
-
     def create_product(self, product_body: WebElement) -> Product:
         return Product(
             title=product_body.find_element(
